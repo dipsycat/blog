@@ -1,3 +1,6 @@
 dipsycat_blog_homepage:
+    path:     /
+    defaults: { _controller: DipsycatBlogBundle:Home:index }
+dipsycat_blog_admin:
     path:     /admin
     defaults: { _controller: DipsycatBlogBundle:Default:index }
