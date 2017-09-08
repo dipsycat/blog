@@ -28,7 +28,7 @@ class LoginSubmitListener implements EventSubscriberInterface {
         $user = $event->getAuthenticationToken()->getUser();
         $request = $event->getRequest();
         if ($user->hasRole('ROLE_ADMIN')) {
-            $url = $this->router->generate('dipsycat_blog_admin');
+            $url = $this->router->generate('sonata_admin_dashboard');
             $request->request->set('_target_path', $url);
         }
         
