@@ -1,0 +1,16 @@
+services:
+    admin.menu:
+        class: Dipsycat\MenuBundle\Admin\MenuAdmin
+        arguments: [~, Dipsycat\MenuBundle\Entity\Menu, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Menu }
+        public: true
+    admin.menu_item:
+        class: Dipsycat\MenuBundle\Admin\MenuItemAdmin
+        arguments: [~, Dipsycat\MenuBundle\Entity\MenuItem, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: MenuItem }
+        public: true
+#    dipsycat_menu.example:
+#        class: Dipsycat\MenuBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
