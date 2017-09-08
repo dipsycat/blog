@@ -1,4 +1,9 @@
 services:
+    dispsycat_blog.login_submit:
+        class: Dipsycat\BlogBundle\EventListener\LoginSubmitListener
+        arguments: ['@router']
+        tags:
+            - { name: kernel.event_subscriber }
 #    dipsycat_blog.example:
 #        class: Dipsycat\BlogBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
