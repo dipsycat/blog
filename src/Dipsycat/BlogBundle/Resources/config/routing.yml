@@ -1,0 +1,3 @@
+dipsycat_blog_homepage:
+    path:     /admin
+    defaults: { _controller: DipsycatBlogBundle:Default:index }
