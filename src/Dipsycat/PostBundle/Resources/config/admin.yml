@@ -1,7 +1,7 @@
 services:
     admin.post:
-        class: Dipsycat\PostBundle\Admin\PostAdmin
-        arguments: [~, Dipsycat\PostBundle\Entity\Post, ~]
+        class: %dipsycat_post.admin_class%
+        arguments: [~, %dipsycat_post.entity_class%, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, label: Post }
         public: true

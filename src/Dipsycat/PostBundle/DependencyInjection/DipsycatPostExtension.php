@@ -12,18 +12,22 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * @link http://symfony.com/doc/current/cookbook/bundles/extension.html
  */
-class DipsycatPostExtension extends Extension
-{
+class DipsycatPostExtension extends Extension {
+
     /**
      * {@inheritdoc}
      */
-    public function load(array $configs, ContainerBuilder $container)
-    {
+    public function load(array $configs, ContainerBuilder $container) {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
-        $loader->load('admin.yml');
+        $container->setParameter('dipsycat_post.entity_class', $config['entity_class']);
+        if ($config['admin_class'] && $config['admin_class'] != 'false') {
+            $loader->load('admin.yml');
+            $container->setParameter('dipsycat_post.admin_class', $config['admin_class']);
+        }
     }
+
 }

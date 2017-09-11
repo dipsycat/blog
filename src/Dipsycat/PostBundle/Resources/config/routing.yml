@@ -1,3 +1,0 @@
-dipsycat_post_homepage:
-    path:     /
-    defaults: { _controller: DipsycatPostBundle:Default:index }

@@ -10,20 +10,27 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/configuration.html}
  */
-class Configuration implements ConfigurationInterface
-{
+class Configuration implements ConfigurationInterface {
+
     /**
      * {@inheritdoc}
      */
-    public function getConfigTreeBuilder()
-    {
+    public function getConfigTreeBuilder() {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('dipsycat_post');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode
+                ->children()
+                    ->scalarNode('entity_class')
+                        ->cannotBeEmpty()
+                    ->end()
+                    ->scalarNode('admin_class')
+                        ->defaultValue('Dipsycat\PostBundle\Admin\PostAdmin')
+                    ->end()
+                ->end()
+        ;
 
         return $treeBuilder;
     }
+
 }

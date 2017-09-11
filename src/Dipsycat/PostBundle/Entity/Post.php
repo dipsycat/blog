@@ -5,12 +5,6 @@ namespace Dipsycat\PostBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
-/**
- * Post
- *
- * @ORM\Table(name="post")
- * @ORM\Entity(repositoryClass="Dipsycat\PostBundle\Repository\PostRepository")
- */
 class Post {
 
     /**
@@ -20,21 +14,21 @@ class Post {
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="title", type="text")
      */
-    private $title;
+    protected $title;
 
     /**
      * @var string
      *
      * @ORM\Column(name="body", type="text")
      */
-    private $body;
+    protected $body;
     
     /**
      * @var datetime $created
@@ -42,7 +36,7 @@ class Post {
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime")
      */
-    private $created;
+    protected $created;
 
     /**
      * @var datetime $updated
@@ -50,7 +44,7 @@ class Post {
      * @ORM\Column(type="datetime")
      * @Gedmo\Timestampable(on="update")
      */
-    private $updated;
+    protected $updated;
 
     /**
      * Get id

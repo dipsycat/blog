@@ -1,4 +1,4 @@
 services:
     dipsycat_post.post_service:
         class: Dipsycat\PostBundle\Service\PostService
-        arguments: ["@doctrine.orm.entity_manager"]
+        arguments: ["@doctrine.orm.entity_manager", %dipsycat_post.entity_class%]
