@@ -36,7 +36,7 @@ class MenuItem
     private $route;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Menu")
+     * @ORM\ManyToOne(targetEntity="Menu", inversedBy="menuId")
      * @ORM\JoinColumn(name="menuId", referencedColumnName="id")
      */
     private $menu;
