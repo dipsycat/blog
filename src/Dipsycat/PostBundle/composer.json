@@ -1,0 +1,27 @@
+{
+    "name": "dipsycat/postbundle",
+    "description" : "Symfony2 Post bundle",
+    "version" : "1.0.0",
+    "type" : "symfony-bundle",
+    "homepage": "https://github.com/dipsycat/postbundle",
+    "license" : "MIT",
+    "keywords" : ["post", "post bundle"],
+    "authors" : [{
+        "name" : "Max Sapronenkov",
+        "email" : "maxim.sapronenkov@gmail.com"
+    }],
+    "require" : {
+        "php": ">=5.3.2",
+        "symfony/symfony": ">=2.8",
+        "stof/doctrine-extensions-bundle": ">=1.2",
+        "sonata-project/admin-bundle": ">=3.23"
+    },
+    "autoload" : {
+        "psr-4" : { "Dipsycat\\PostBundle\\" : "" }
+    },
+    "extra" : {
+        "branch-alias" : {
+            "dev-master" : "1.0.x-dev"
+        }
+    }
+}
