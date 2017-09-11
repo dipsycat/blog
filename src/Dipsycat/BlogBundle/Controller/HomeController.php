@@ -7,10 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class HomeController extends Controller {
 
     public function indexAction() {
-        $em = $this->getDoctrine()->getManager();
-        $repository = $em->getRepository('DipsycatBlogBundle:Post');
-        $posts = $repository->findBy([], ['created' => 'DESC']);
-
+        $posts = $this->get('dipsycat_post.post_service')->getPosts();
+        
         return $this->render('DipsycatBlogBundle:Home:index.html.twig', ['posts' => $posts]);
     }
 

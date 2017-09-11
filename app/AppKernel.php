@@ -24,6 +24,7 @@ class AppKernel extends Kernel
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Dipsycat\MenuBundle\DipsycatMenuBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new Dipsycat\PostBundle\DipsycatPostBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

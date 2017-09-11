@@ -1,6 +1,6 @@
 <?php
 
-namespace Dipsycat\BlogBundle\Repository;
+namespace Dipsycat\PostBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 

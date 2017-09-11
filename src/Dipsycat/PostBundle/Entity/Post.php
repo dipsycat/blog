@@ -1,6 +1,6 @@
 <?php
 
-namespace Dipsycat\BlogBundle\Entity;
+namespace Dipsycat\PostBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
@@ -9,7 +9,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * Post
  *
  * @ORM\Table(name="post")
- * @ORM\Entity(repositoryClass="Dipsycat\BlogBundle\Repository\PostRepository")
+ * @ORM\Entity(repositoryClass="Dipsycat\PostBundle\Repository\PostRepository")
  */
 class Post {
 
@@ -40,7 +40,7 @@ class Post {
      * @var datetime $created
      *
      * @Gedmo\Timestampable(on="create")
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
     private $created;
 

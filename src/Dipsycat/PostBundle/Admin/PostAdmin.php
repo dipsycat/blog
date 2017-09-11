@@ -1,6 +1,6 @@
 <?php
 
-namespace Dipsycat\BlogBundle\Admin;
+namespace Dipsycat\PostBundle\Admin;
 
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
