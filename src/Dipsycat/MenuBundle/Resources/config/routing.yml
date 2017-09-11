@@ -1,3 +1,0 @@
-dipsycat_menu_homepage:
-    path:     /
-    defaults: { _controller: DipsycatMenuBundle:Default:index }

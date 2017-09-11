@@ -2,18 +2,31 @@
 
 namespace Dipsycat\MenuBundle\Menu;
 
-use Symfony\Component\DependencyInjection\ContainerInterface as Container;
+use Knp\Menu\FactoryInterface;
+use Knp\Menu\ItemInterface;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 
-class Builder {
+class Builder implements ContainerAwareInterface {
+    use ContainerAwareTrait;
 
-    private $container;
-    
-    public function __construct(Container $container) {
-        $this->container = $container;
+    public function mainMenu(FactoryInterface $factory, array $options) {
+        $menuItems = $this->container->get('dipsycat.menu')->getMainMenu();
+        $menu = $factory->createItem('root');
+        $this->setCurrentItem($menu);
+
+        $menu->setChildrenAttribute('class', 'nav');
+        $menu->setExtra('currentElement', 'active');
+
+        foreach($menuItems as $item) {
+            $menu->addChild($item->getTitle(), array('uri' => $item->getRoute()));
+        }
+
+        return $menu;
     }
 
-    public function getMainMenu() {
-        $menu = $this->container->get('dipsycat.menu');
-        
+    protected function setCurrentItem(ItemInterface $menu) {
+        $menu->setUri($this->container->get('request')->getPathInfo());
     }
+
 }

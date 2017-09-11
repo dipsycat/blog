@@ -11,6 +11,9 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, label: MenuItem }
         public: true
+    dipsycat.menu:
+        class: Dipsycat\MenuBundle\Service\MenuService
+        arguments: ['@service_container']
 #    dipsycat_menu.example:
 #        class: Dipsycat\MenuBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
